@@ -28,3 +28,6 @@ div:string default 'html'
 mode:string 'auto'|'light'|'dark' default 'auto'
 
 class:string default 'dark-mode' 
+
+callback:function(isDark) default null
+isDark 是否是暗黑模式
