@@ -1,16 +1,19 @@
 ### Usage
+npm 
 ``` bash
 $ npm install johnny-dark-mode --save
 ```
 
 ```javascript
  import DarkMode from 'johnny-dark-mode'
-  new DarkMode({mode:'auto',callback:function (dark) {
-      console.log(dark)
-    }})
+ function change(isDark) {
+      console.log(isDark)
+ }
+ new DarkMode({mode:'auto',callback:change})
 
 
 ```
+
 
 ```css
 .dark-mode{
