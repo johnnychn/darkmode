@@ -15,9 +15,9 @@ new DarkMode({mode:'auto',callback:change})
 
 ```css
 .dark-mode{
-        background: black;
-        color: azure;
-    }
+  background: black;
+  color: azure;
+  }
 ```
 
 
