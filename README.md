@@ -5,13 +5,11 @@ $ npm install johnny-dark-mode --save
 ```
 
 ```javascript
- import DarkMode from 'johnny-dark-mode'
- function change(isDark) {
-      console.log(isDark)
- }
- new DarkMode({mode:'auto',callback:change})
-
-
+import DarkMode from 'johnny-dark-mode'
+function change(isDark) {
+    console.log(isDark)
+}
+new DarkMode({mode:'auto',callback:change})
 ```
 
 
