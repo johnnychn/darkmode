@@ -2,8 +2,8 @@
   "name": "johnny-dark-mode",
   "description": "dark mode lib",
   "author": "johnnyGoo <157781745@qq.com>",
-  "main": "dist/dark-mode.js",
-  "version": "1.0.1",
+  "main": "src/index.js",
+  "version": "1.0.3",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --host 0.0.0.0 --port 8999",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
