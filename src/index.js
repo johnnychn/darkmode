@@ -5,21 +5,23 @@
 import extend from 'johnny-extend'
 
 function DarkMode(opt) {
-    opt = extend({div: 'html',mode:'auto', class: 'dark-mode'}, opt);
+    opt = extend({div: 'html', mode: 'auto', class: 'dark-mode'}, opt);
+
     function callback(dark) {
 
         if (opt.callback) {
             opt.callback(dark)
         }
     }
+
     let div = document.querySelector(opt.div);
     let media = window.matchMedia('(prefers-color-scheme: dark)');
     let internal_callback = (e) => {
         let prefersDarkMode = e.matches;
         if (opt.mode === 'light') {
-            prefersDarkMode=false
+            prefersDarkMode = false
         } else if (opt.mode === 'dark') {
-            prefersDarkMode=true
+            prefersDarkMode = true
         }
 
         if (prefersDarkMode) {
@@ -30,6 +32,10 @@ function DarkMode(opt) {
             callback(false)
         }
     };
+    this.opt = opt;
+    this.media = media;
+    this.__internal_callback = internal_callback
+
 
     if (typeof media.addEventListener === 'function') {
         media.addEventListener('change', internal_callback);
@@ -40,7 +46,14 @@ function DarkMode(opt) {
 
 }
 
-window.DarkMode=DarkMode;
+DarkMode.prototype.forceMode = function (mode) {
+    this.opt.mode = mode;
+    this.__internal_callback(this.media)
+
+}
+
+
+window.DarkMode = DarkMode;
 
 
 export default DarkMode

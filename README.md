@@ -32,3 +32,7 @@ class:string default 'dark-mode'
 callback:function(isDark) default null
 
 isDark 是否是暗黑模式
+
+### Methods
+
+forceMode(mode:String):DarkMode //强制模式
